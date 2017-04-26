@@ -22,12 +22,12 @@ class SnowflakeGenerator:
     snowflake_id = (timestamp << 22) | (self.datacenter_id << 5) | (self.machine_id << 5) | (sequence << 12)
     return int(snowflake_id)
 
-  def getUnixTimestamp(self):
-    return floor(time.time() * 1000)
+	def getUnixTimestamp(self):
+		return floor(time.time() * 1000)
 
-  def getNextSequence(self, timestamp):
-    if self.last_timestamp == timestamp:
-      self.sequence_number += 1
-    else:
-      self.sequence_number = 1
-    return self.sequence_number
+	def getNextSequence(self, timestamp):
+		if self.last_timestamp == timestamp:
+			self.sequence_number += 1
+		else:
+			self.sequence_number = 1
+		return self.sequence_number
