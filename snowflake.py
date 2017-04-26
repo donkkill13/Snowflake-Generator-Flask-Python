@@ -1,5 +1,5 @@
-import math
 import time
+from math import floor
 
 '''
 	Offset from Unix Epoch
@@ -23,12 +23,11 @@ class SnowflakeGenerator:
 		return int(snowflake_id)
 
 	def getUnixTimestamp(self):
-		return math.floor(time.time() * 1000)
+		return floor(time.time() * 1000)
 
 	def getNextSequence(self, timestamp):
 		if self.last_timestamp == timestamp:
 			self.sequence_number += 1
-			return self.sequence_number
 		else:
 			self.sequence_number = 1
-			return self.sequence_number
+		return self.sequence_number
