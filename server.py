@@ -1,6 +1,5 @@
 from flask import Flask, jsonify
 from snowflake import SnowflakeGenerator
-import json
 app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = False
 
